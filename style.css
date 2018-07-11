@@ -1,0 +1,66 @@
+body{
+    background-color: #F6F6F6;
+}
+
+.container{
+    padding-top: 50px;
+}
+
+.icon-app{
+    font-size: 45px;
+    margin-bottom: 10px;
+    color: #8148d6;
+}
+
+a{
+    color: #8148d6;
+}
+
+a.btn-primary{
+    color: #fff;
+}
+
+.btn-primary{
+    background-color: #8148d6 !important;
+    border-color: #7833d6 !important;
+
+}
+
+input{
+    height: 50px;
+}
+
+textarea{
+    margin-top: 5px;
+    height: 80px;
+}
+
+input,
+textarea,
+.card{
+    margin-bottom: 15px;
+}
+
+
+#mailing-list{
+    display: none;
+}
+
+/*=================== Result page ====================*/
+
+#result{
+    padding-top: 18%;
+}
+
+.result-icon{
+    margin-bottom: 15px;
+    font-size: 80px;
+}
+
+.red {
+    color: #c30000;
+}
+
+.green{
+    color: limegreen;
+}
