@@ -11,7 +11,7 @@ $from = 'feedbacksensei@obrassard.ca';
 
 
 $app = validatePost('app');
-$subject = validatePost('subject');
+$sub = validatePost('subject');
 $type = validatePost('type');
 $steps = validatePost('steps');
 $version = validatePost('version');
@@ -21,42 +21,41 @@ $first = validatePost('first-time');
 $expect = validatePost('expected-action');
 $prtr = validatePost('protractor');
 
-if ( !$app || !$subject || !$type || !$steps || !$version || !$form || !$os || !$first){
+if ( !$app || !$sub || !$type || !$steps || !$version || !$form || !$os || !$first){
     header('Location: result.php?r=failed');
     die();
 }
 
 $subject = 'Nouveau commentaire : '.validatePost('app');
 
-$messageBody = "<h4>Nouveau commentaire pour l'app $app</h4>
-<h5>Details techniques</h5>
+$messageBody = "<strong>Nouveau commentaire pour l'app $app</strong><br><br>
+<strong>Details techniques</strong><br>
 <strong>Envoyé le : </strong>".date('Y-m-d \à h:i:s').
 "<br><strong>Application :</strong> $app
 <br><strong>Version : </strong> $version
 <br><strong>Système d'exploitation :</strong> $os
 <br><strong>Formulaire :</strong> $form
+<br><strong>Type de problème :</strong> $type<br><br>
 
 
-<h5>Type de problème</h5>
-<p>$type</p>
+<strong>Details du problème</strong><br>
+$sub<br><br>
 
-<h5>Details du problème</h5>
-<p>$subject</p>
+<strong>Étapes de reproduction du problème</strong><br>
+$steps
+<br><br>
 
-<h5>Étapes de reproduction du problème</h5>
-<p>$steps</p>
-
-<h5>Est-ce la première fois ?</h5>
-<p>$steps</p>";
+<strong>Est-ce la première fois ?</strong><br>
+$first<br><br>";
 
 if ($expect){
-    $messageBody = $messageBody."<h5>Comportement attendu</h5><p>$expect</p>";
+    $messageBody = $messageBody."<strong>Comportement attendu</strong><br>$expect<br><br>";
 }
 
 if ($prtr){
-    $messageBody = $messageBody."<h5>Rapporteur du problème</h5><p><a href='mailto:$expect'>$expect</a></p>";
+    $messageBody = $messageBody."<strong>Rapporteur du problème : </strong><a href='mailto:$prtr'>$prtr</a>";
 }
-
+$messageBody = $messageBody."<br><br>Envoyé par Feedback Sensei";
 $headers = "From: ".$from."\r\n";
 $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
 

@@ -48,7 +48,7 @@ if(!$result){
                             <?php } else { ?>
                                 <i class="far fa-check-circle result-icon green"></i>
                                 <h1 class="">Merci !</h1>
-                                <h3>Vos commentaires ont été envoyés avec succès.</h3>
+                                <h3>Votre commentaire a été envoyé avec succès.</h3>
                                 <br>
                                 <a class="btn btn-primary btn-lg" href="index.php"><i class="fas fa-bug"></i>&nbsp; Envoyer un autre commentaire</a>
                             <?php } ?>

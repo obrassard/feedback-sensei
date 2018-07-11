@@ -9,7 +9,7 @@ function connectDB(){
     try
     {
         //Modify thisr connection string for your database
-        //You need the table "Emails" -> see 'model.sql'
+        //You must create the database first -> see 'model.sql'
         $bdd = new PDO('mysql:host=localhost;dbname=feedbacksensei;charset=utf8', 'root', 'root');
         $bdd -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         return $bdd;

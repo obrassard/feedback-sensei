@@ -77,7 +77,7 @@
                                 <option value="FrmGestionJeux">Gestion et liste des jeux (admin)</option>
                                 <option value="FrmJeuParTypeAbo">Selection des jeux inclus dans un type d'abonnement</option>
                                 <option value="FrmModifierCompte">Modification de compte de jeu</option>
-                                <option value="FrmModifierJeu">Modificartion des détails d'un jeu</option>
+                                <option value="FrmModifierJeu">Modification des détails d'un jeu</option>
                                 <option value="FrmModifierSettings">Modification des paramètre de l'app</option>
                                 <option value="FrmModifierTypesAbonnement">Modification des type d'abonnement</option>
                                 <option value="FrmModifierUtilisateur">Modification des détails d'un utilisateur</option>
