@@ -13,7 +13,7 @@
         <!-- FontAwesome -->
         <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
         <!-- Custom styles  -->
-        <link href="style.css" rel="stylesheet">
+        <link href="style/global-theme.css" rel="stylesheet">
 
     </head>
 
@@ -29,7 +29,7 @@
                         <h5><span class="badge badge-warning">Application : <?echo $appname?></span></h5>
                     </div>
                     <hr>
-                    <form class="form-signin" action="feedback-controller.php" method="post">
+                    <form class="form-signin" action="controllers/feedback-controller.php" method="post">
                         <input type="hidden" name="app" value="<?echo $appname?>">
                         <div class="form-label-group">
                             <label for="subject">S'il vous plait décrivez-nous votre problème</label>

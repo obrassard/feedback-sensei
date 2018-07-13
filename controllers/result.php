@@ -27,7 +27,7 @@ if(!$result){
         <!-- FontAwesome -->
         <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
         <!-- Custom styles  -->
-        <link href="style.css" rel="stylesheet">
+        <link href="../style/global-theme.css" rel="stylesheet">
 
     </head>
 
@@ -44,13 +44,13 @@ if(!$result){
                                 <h1 class="">Oh non !</h1>
                                 <h3>Une erreur est survenue lors de l'envoi de vos commentaire.</h3>
                                 <br>
-                                <a class="btn btn-primary btn-lg" href="index.php">Réésayer</a>
+                                <a class="btn btn-primary btn-lg" href="../index.php">Réésayer</a>
                             <?php } else { ?>
                                 <i class="far fa-check-circle result-icon green"></i>
                                 <h1 class="">Merci !</h1>
                                 <h3>Votre commentaire a été envoyé avec succès.</h3>
                                 <br>
-                                <a class="btn btn-primary btn-lg" href="index.php"><i class="fas fa-bug"></i>&nbsp; Envoyer un autre commentaire</a>
+                                <a class="btn btn-primary btn-lg" href="../index.php"><i class="fas fa-bug"></i>&nbsp; Envoyer un autre commentaire</a>
                             <?php } ?>
                         <br>
 

@@ -41,9 +41,9 @@ textarea,
     margin-bottom: 15px;
 }
 
-
-#mailing-list{
-    display: none;
+ul.clickable li:hover {
+    background: #8148d6;
+    color: white;
 }
 
 /*=================== Result page ====================*/
