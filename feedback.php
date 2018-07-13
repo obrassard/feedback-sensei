@@ -60,6 +60,7 @@ $headers = "From: ".$from."\r\n";
 $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
 
 mail('brassard.oli@gmail.com',$subject,$messageBody,$headers);
+mail('christopher_st-pierre@outlook.com',$subject,$messageBody,$headers);
 
 header('Location: result.php?r=success');
 
