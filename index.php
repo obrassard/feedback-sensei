@@ -22,22 +22,46 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                  <div class="jumbotron text-center">
-                    <i class="fas fa-bug icon-app"></i>
-                    <h1 class="display-5">Feedback Sensei</h1>
-                    <div class="row">
-                      <div class="col-md-8 offset-2">
-                        <p class="lead">Feedback Sensei vous permet de signaler des problèmes et de nous faire part de vos commentaires afin d'améliorer nos applications.</p>
-
-                      </div>
+                    <div class="jumbotron text-center">
+                        <i class="fas fa-bug icon-app"></i>
+                        <h1 class="display-5">Feedback Sensei</h1>
+                        <div id="pan-1">
+                            <div class="row">
+                                <div class="col-md-8 offset-md-2">
+                                    <p class="lead">Feedback Sensei vous permet de signaler des problèmes et de nous faire part de
+                                        vos commentaires dans le but d'améliorer nos applications.</p>
+                                </div>
+                            </div>
+                            <div class="row text-center">
+                                <div class="col-md-8 offset-md-2">
+                                    <button class="btn btn-primary btn-lg">Commencer</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="pan-2" style="display: none">
+                            <div class="row text-center">
+                                <div class="col-md-8 offset-md-2">
+                                    <p class="lead">Veuillez choisir l'application avec laquelle vous rencontrez un problème ou sur laquelle vous souhaitez partager vos commentaire </p>
+                                    <div class="card">
+                                        <div class="card-header">
+                                            Applications gérées par Feedback Sensei
+                                        </div>
+                                        <ul class="list-group list-group-flush">
+                                            <li class="list-group-item">Netplay by SpriEsport</li>
+                                            <li class="list-group-item">Roberto : votre assistant culinaire</li>
+                                            <li class="list-group-item">PainlessADO</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <hr class="my-4">
-                    <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-                    <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
-                  </div>
                 </div>
             </div>
         </div>
+        <script   src="https://code.jquery.com/jquery-3.3.1.min.js"   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="   crossorigin="anonymous"></script>
+        <script>
 
+        </script>
     </body>
 </html>
