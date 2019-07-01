@@ -4,7 +4,7 @@ const MongoClient = require('mongodb').MongoClient;
 
 require('dotenv').config();
 const uri = process.env.MONGO_CONNECTION_STRING;
-const app_port = process.env.PORT;
+const app_port = process.env.PORT || 8080
 
 var app = express();
 app.use(express.static('public'));
