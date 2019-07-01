@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    {% include 'head.html.twig' with { app : app.shortName} %}
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-8">
+                    <div class="text-center mb-4">
+                        <i class="fas fa-bug icon-app"></i>
+                        <h1 class="h3 mb-3 font-weight-normal">Feedback Sensei</h1>
+                        <p class="lead">Merci de nous aider à améliorer {{app.shortName}},<br>vos commentaires sont importants pour nous!  </p>
+                        <h5><span class="badge badge-warning">Application : {{app.name}}</span></h5>
+                    </div>
+                    <hr>
+                    <form class="form-signin" action="/feedback" method="post">
+                        <input type="hidden" name="appid" value="{{app.appid}}">
+                        
+                        {% for field in app.fields %}
+                            <div class="form-label-group">
+                            {% if field.type == "text" %}
+                                <label for="{{field.id}}">{{field.label}}</label>
+                                <input type="text" id="{{field.id}}" name="{{field.id}}" class="form-control" placeholder="{{field.placeholder}}" {% if field.required %}required{% endif %}>
+
+                            {% elseif field.type == "email" %}
+                                <label for="{{field.id}}">{{field.label}}</label>
+                                <input type="email" id="{{field.id}}" name="{{field.id}}" class="form-control" placeholder="{{field.placeholder}}" {% if field.required %}required{% endif %}>
+                            
+                            {% elseif field.type == "textarea" %}
+                                <label for="{{field.id}}">{{field.label}}</label>
+                                <textarea id="{{field.id}}" name="{{field.id}}" class="form-control" placeholder="{{field.placeholder}}" {% if field.required %}required{% endif %}></textarea>
+                            
+                            {% elseif field.type == "select" %}
+                                <label for="{{field.id}}">{{field.label}}</label>
+                                <select id="{{field.id}}" name="{{field.id}}" class="form-control" {% if field.required %}required{% endif %}>
+                                    {% if field.placeholder != null and field.placeholder != "" %}
+                                        <option value="">{{field.placeholder}}</option>
+                                    {% endif %}
+                                    {% for option in field.options %}
+                                        <option value="{{option.key}}" checked>{{option.value}}</option>
+                                    {% endfor %}
+                                </select>
+                                <br>
+
+                            {% elseif field.type == "radio" %}
+                                <label for="{{field.id}}">{{field.label}}</label>
+                                <div class="card">
+                                    <div class="card-body">
+                                    {% for option in field.options %}
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="{{field.id}}" id="{{field.id}}_{{option.key}}" value="{{option.key}}">
+                                            <label class="form-check-label" for="{{field.id}}_{{option.key}}">{{option.value}}</label>
+                                        </div>
+                                    {% endfor %}
+                                    </div>
+                                </div>
+                            {% endif %}
+                            </div>
+                        {% endfor %}
+                                                
+                        <button class="btn btn-primary btn-block" type="submit">Soumettre mon commentaire</button>
+                        <p class="mt-4 mb-3 text-muted text-center">&copy; 2018 - Olivier Brassard<br></p>
+                        <br>
+                    </form>
+                </div>
+                <div class="col-md-2"></div>
+            </div>
+        </div>
+    </body>
+</html>

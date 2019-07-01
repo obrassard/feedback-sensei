@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="fr">
+    {% include 'head.html.twig' %}
+
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                    <div class="text-center mb-4" id="result">
+                        {% if result != 'success' %}
+                            <i class="far fa-times-circle result-icon red"></i>
+                            <h1 class="">Oh non !</h1>
+                            <h3>Une erreur est survenue lors de l'envoi de vos commentaire.</h3>
+                            <br>
+                            <a class="btn btn-primary btn-lg" href="/{{appid}}">Réésayer</a>
+                        {% else %}
+                            <i class="far fa-check-circle result-icon green"></i>
+                            <h1 class="">Merci !</h1>
+                            <h3>Votre commentaire a été envoyé avec succès.</h3>
+                            <br>
+                            <a class="btn btn-primary btn-lg" href="/{{appid}}"><i class="fas fa-bug"></i>&nbsp; Envoyer un autre commentaire</a>
+                        {% endif %}
+                        <br>
+                    </div>
+                </div>
+                <div class="col-md-3"></div>
+            </div>
+        </div>
+    </body>
+</html>

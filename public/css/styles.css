@@ -26,13 +26,9 @@ a.btn-primary{
 
 }
 
-input{
-    height: 50px;
-}
-
 textarea{
     margin-top: 5px;
-    height: 80px;
+    height: 90px !important;
 }
 
 input,
