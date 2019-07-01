@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/obrassard/feedback-sensei-2.git"
+    "url": "git+https://github.com/obrassard/feedback-sensei.git"
   },
   "author": "Olivier Brassard",
-  "license": "ISC",
+  "license": "",
   "bugs": {
-    "url": "https://github.com/obrassard/feedback-sensei-2/issues"
+    "url": "https://github.com/obrassard/feedback-sensei/issues"
   },
-  "homepage": "https://github.com/obrassard/feedback-sensei-2#readme",
+  "homepage": "https://feedback.obrassard.ca",
   "dependencies": {
     "body-parser": "^1.19.0",
     "dotenv": "^8.0.0",
