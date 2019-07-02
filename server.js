@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const MongoClient = require('mongodb').MongoClient;
+const sendgrid = require('@sendgrid/mail');
 
 require('dotenv').config();
 const uri = process.env.MONGO_CONNECTION_STRING;
@@ -8,6 +9,9 @@ const app_port = process.env.PORT || 8080
 
 var app = express();
 app.use(express.static('public'));
+
+//Config Sendgrid
+sendgrid.setApiKey(process.env.SENDGRID_API_KEY);
 
 // Config view engine
 app.set('views', __dirname + '/views');
@@ -46,7 +50,6 @@ app.get('/:appid', function(req, res){
             if (result == null){
                 res.redirect('/');
             } else {
-                console.log(result);
                 res.render('app-details', {
                     app : result
                 });           
@@ -64,18 +67,47 @@ app.post('/feedback', function(req, res){
         db.insertOne(req.body, function(err, response) {
             let result = 'success';
             if (err) {
+                console.log(err);
                 result = 'error';
             }
 
             res.render('result', {
                 appid : req.body.appid,
-                result : 'error'
+                result : result
             })
 
+            if (result = 'success'){
+
+                let html = `<strong>Hello! You recieved a new feedback for the app ${req.body.appid}.</strong><br>
+                        Here's all the details :<br>
+                        <table>`;
+
+                for (var key in req.body) {
+                    if (req.body.hasOwnProperty(key)) {
+                        html += `<tr><td><strong>${key}</strong></td><td>${req.body[key]}</td></tr>`
+                    }
+                }
+
+                html += '</table>';
+                
+                //Send mail
+                const msg = {
+                    to: process.env.NOTIFICATION_EMAIL,
+                    from: {
+                        email: 'feedback@obrassard.ca',
+                        name: 'Feedback Sensei'
+                    },
+                    subject: `New feedback - ${req.body.appid}`,
+                    html: html
+                };
+
+                sendgrid.send(msg);
+                console.log('Email sent');
+            }
+            
             mongo.close();
         });
     });
-    console.log(req.body)
 });
 
 app.listen(app_port);
