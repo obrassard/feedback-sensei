@@ -1,0 +1,62 @@
+{
+    "_id": {
+        "$oid": "5d1a559969f4b0bd9582efd7"
+    },
+    "name": "Test App",
+    "appid": "test",
+    "shortName": "Test",
+    "fields": [
+        {
+            "type": "text",
+            "label": "Test label text",
+            "placeholder": "Test placeholder",
+            "required": true,
+            "id": "testText"
+        },
+        {
+            "type": "textarea",
+            "label": "Test label text 2",
+            "required": false,
+            "placeholder": "Placeholder 2",
+            "id": "testTextArea"
+        },
+        {
+            "type": "select",
+            "label": "This is a select",
+            "placeholder": "Please select",
+            "required": true,
+            "options": [
+                {
+                    "key": "key1",
+                    "value": "Key one"
+                },
+                {
+                    "key": "key2",
+                    "value": "Key two"
+                }
+            ],
+            "id": "testSelect"
+        },
+        {
+            "type": "radio",
+            "label": "Test label radio",
+            "required": true,
+            "options": [
+                {
+                    "key": "key1",
+                    "value": "Option 1"
+                },
+                {
+                    "key": "key2",
+                    "value": "Option 2"
+                },
+                {
+                    "key": "test",
+                    "value": "test"
+                }
+            ],
+            "id": "radiotest"
+        }
+    ],
+    "visible": false
+}
