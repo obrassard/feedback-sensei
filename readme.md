@@ -32,4 +32,4 @@ npm run start
 
 ***
 
-![screenshot](https://github.com/obrassard/feedback-sensei/blob/master/docs/screenshot.png)
+[![screenshot](https://github.com/obrassard/feedback-sensei/blob/master/docs/screenshot.png)](https://feedback.obrassard.ca)
