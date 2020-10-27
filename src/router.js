@@ -6,10 +6,10 @@ require('dotenv').config();
 const uri = process.env.MONGO_CONNECTION_STRING;
 const MongoClient = require('mongodb').MongoClient;
 
+const i18n = require('./i18n')
 
 // Routes 
 router.get('/', (req, res) => {
-    console.log(uri);
     const mongo = new MongoClient(uri, { useNewUrlParser: true });
     mongo.connect(err => {
         const db = mongo.db("feedback-sensei").collection("apps");
@@ -17,7 +17,8 @@ router.get('/', (req, res) => {
             if (err) throw err;
             
             res.render('index', {
-                apps : result
+                availableApps : result,
+                i18n : i18n
             });
 
             mongo.close();
@@ -36,7 +37,8 @@ router.get('/:appid', (req, res) => {
                 res.redirect('/');
             } else {
                 res.render('app-details', {
-                    app : result
+                    app : result,
+                    i18n : i18n
                 });           
             }
             mongo.close();
@@ -49,7 +51,7 @@ router.post('/feedback', (req, res) => {
     mongo.connect(err => {
         const db = mongo.db("feedback-sensei").collection("reports");
         req.body.submitDate = new Date();
-        db.insertOne(req.body, (err, res) => {
+        db.insertOne(req.body, (err) => {
             
             let result = 'success';
             
@@ -60,7 +62,8 @@ router.post('/feedback', (req, res) => {
 
             res.render('result', {
                 appid : req.body.appid,
-                result : result
+                result : result,
+                i18n : i18n
             })
 
             if (result = 'success'){

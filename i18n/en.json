@@ -1,0 +1,24 @@
+{
+    "appName": "Feedback Sensei",
+    "copyright": "2020 - Olivier Brassard",
+    "index": {
+        "lead": "Feedback Sensei enables you to report problems and send us your comments in order to help us improve our applications.",
+        "startBtnText": "Let's start",
+        "instructions    ": "Please select the application you are experiencing an issue with or would like to comment on.",
+        "cardTitle": "Apps managed by Feedback Sensei"
+    },
+    "form": {
+        "thanksP1": "Thank you for helping us improve",
+        "thanksP2": "your feedback is important to us!",
+        "application": "App",
+        "submitBtnText": "Submit my comments"
+    },
+    "result": {
+        "errorTitle": "Oh no!",
+        "errorText": "An error occurred while sending your comments.",
+        "confirmTitle": "Thank you !",
+        "confirmText": "Your feedback has been submitted successfully.",
+        "restartBtnText": "Send a new report",
+        "retryBtnText":"Retry"
+    }
+}

@@ -1,36 +1,35 @@
 <!DOCTYPE html>
 <html>
-{% include 'head.html.twig' %}
+{% include 'head.html.twig' with { i18n : i18n } %}
 <body>
     <div class="container">
             <div class="row">
                 <div class="col-md-12">
                     <div class="jumbotron text-center">
                         <i class="fas fa-bug icon-app"></i>
-                        <h1 class="display-5">Feedback Sensei</h1>
+                        <h1 class="display-5">{{i18n.appName}}</h1>
                         <div id="pan-1">
                             <div class="row">
                                 <div class="col-md-8 offset-md-2">
-                                    <p class="lead">Feedback Sensei vous permet de signaler des problèmes et de nous faire part de
-                                        vos commentaires dans le but d'améliorer nos applications.</p>
+                                    <p class="lead">{{i18n.index.lead}}</p>
                                 </div>
                             </div>
                             <div class="row text-center">
                                 <div class="col-md-8 offset-md-2">
-                                    <button id="btn-start" class="btn btn-primary btn-lg">Commencer</button>
+                                    <button id="btn-start" class="btn btn-primary btn-lg">{{i18n.index.startBtnText}}</button>
                                 </div>
                             </div>
                         </div>
                         <div id="pan-2" style="display: none">
                             <div class="row text-center">
                                 <div class="col-md-8 offset-md-2">
-                                    <p class="lead">Veuillez choisir l'application avec laquelle vous rencontrez un problème ou sur laquelle vous souhaitez partager vos commentaires.</p>
+                                    <p class="lead">{{i18n.index.instructions}}</p>
                                     <div class="card">
                                         <div class="card-header">
-                                            <strong>Applications gérées par Feedback Sensei</strong>
+                                            <strong>{{i18n.index.cardTitle}}</strong>
                                         </div>
                                         <ul class="list-group list-group-flush clickable">
-                                            {% for app in apps %}
+                                            {% for app in availableApps %}
                                                 <li id="{{app.appid}}" class="list-group-item">{{app.name}}</li>
                                             {% endfor %}
                                         </ul>
@@ -43,7 +42,7 @@
             </div>
             <div class="row">
                 <div class="col-md-12">
-                    <p class="text-muted text-center">&copy; 2018 - Olivier Brassard<br></p>
+                    <p class="text-muted text-center">&copy; {{i18n.copyright}}<br></p>
                     <br>
                 </div>
             </div>

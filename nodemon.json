@@ -1,4 +1,4 @@
 {
-  "watch": ["server.js", "views/", "public/"],
-  "ext": "twig, js, css"
+  "watch": ["server.js", "views/", "public/", "src/", "i18n/"],
+  "ext": "twig, js, css, json"
 }
