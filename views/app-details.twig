@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-    {% include 'head.html.twig' with { app : app.shortName} %}
+    {% include 'head.html.twig' with { app : app.shortName, i18n : i18n } %}
     <body>
         <div class="container">
             <div class="row">
@@ -8,9 +8,9 @@
                 <div class="col-md-8">
                     <div class="text-center mb-4">
                         <i class="fas fa-bug icon-app"></i>
-                        <h1 class="h3 mb-3 font-weight-normal">Feedback Sensei</h1>
-                        <p class="lead">Merci de nous aider à améliorer {{app.shortName}},<br>vos commentaires sont importants pour nous!  </p>
-                        <h5><span class="badge badge-warning">Application : {{app.name}}</span></h5>
+                        <h1 class="h3 mb-3 font-weight-normal">{{i18n.appName}}</h1>
+                        <p class="lead">{{i18n.form.thanksP1}} {{app.shortName}},<br>{{i18n.form.thanksP2}}</p>
+                        <h5><span class="badge badge-warning">{{i18n.form.application}} : {{app.name}}</span></h5>
                     </div>
                     <hr>
                     <form class="form-signin" action="/feedback" method="post">
@@ -58,8 +58,8 @@
                             </div>
                         {% endfor %}
                                                 
-                        <button class="btn btn-primary btn-block" type="submit">Soumettre mon commentaire</button>
-                        <p class="mt-4 mb-3 text-muted text-center">&copy; 2018 - Olivier Brassard<br></p>
+                        <button class="btn btn-primary btn-block" type="submit">{{i18n.form.submitBtnText}}</button>
+                        <p class="mt-4 mb-3 text-muted text-center">&copy; {{i18n.copyright}}<br></p>
                         <br>
                     </form>
                 </div>
